@@ -1,16 +1,21 @@
 import './scss/App.scss';
-import Homepage from "pages/HomePage/Home"
-import { Routes, Route } from "react-router-dom";
+import MainLayout from 'common/components/layouts/MainLayout';
+import Homepage from "pages/HomePage/Home";
+import Dashboard from "pages/Dashboard/Dashboard";
 
+
+import {Routes, Route } from "react-router-dom";
+import Login from 'pages/Auth/Login';
 
 function App() {
   return (
-    <div>
-      <Homepage />
-      <Routes>
-          <Route path="/home" element={<Homepage />} />
-      </Routes>
-    </div>
+    <Routes>
+      <Route path="/" element={<MainLayout/>}>
+        <Route path="home" element={<Homepage />} />
+        <Route path="dashboard" element={<Dashboard />} />
+      </Route>
+      <Route path="/login" element={<Login/>}></Route>
+    </Routes>
   );
 }
 
