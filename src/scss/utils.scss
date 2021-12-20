@@ -1,3 +1,21 @@
 .c-pointer{
     cursor: pointer;
 }
+.loader{
+    position: absolute;
+    right: 50%;
+    top: 50%;
+    transform: translateX(-50%);
+    transform: translateY(-50%);
+    height: 100px;
+    width: 100px;
+    text-align: center;
+    padding: 1em;
+    z-index: $z-index-loading;
+    &.hide{
+        display: none;
+    }
+    &.show{
+        display: block;
+    }
+}

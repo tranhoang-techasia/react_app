@@ -1,12 +1,15 @@
 import Icon from '@mdi/react';
-import { mdiAccount , mdiViewDashboardOutline} from '@mdi/js';
+import { mdiAccount , mdiViewDashboardOutline, mdiHome, mdiMessageBadgeOutline, mdiLogout} from '@mdi/js';
 import {Link} from "react-router-dom";
 
 const Sidebar = (props) => {
     const style = {width : '280px', height : "100vh"};
     const navData = [
-        {"icon" : mdiAccount, "title" : "User", "link" : "/home"},
+        {"icon" : mdiHome, "title" : "Home", "link" : "/home"},
         {"icon" : mdiViewDashboardOutline, "title" : "Dashboard", "link" : "/dashboard"},
+        {"icon" : mdiAccount, "title" : "User", "link" : "/user"},
+        {"icon" : mdiMessageBadgeOutline, "title" : "Notify", "link" : "/notify"},
+        {"icon" : mdiLogout, "title" : "Logout", "link" : "/logout"},
     ];
 
     const navRender = navData.map((item) => <li key={item.title} className="nav-item text-light">
